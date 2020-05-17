@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Dropzone from "react-dropzone";
+import axios from 'axios';
 
 const FileUpload = (props) => {
     const [images, setImages] = useState([]);
@@ -9,7 +10,7 @@ const FileUpload = (props) => {
         const config = {
             header: { 'content-type': 'multipart/form-data'}
         };
-        formData.append("file", files[0])
+        formData.append("file", files[0]);
         try {
             const response = await axios.post('/api/uploads/images', formData, config);
             await setImages([...images, response.data.image]);

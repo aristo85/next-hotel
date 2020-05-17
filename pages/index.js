@@ -5,10 +5,10 @@ import Link from "next/link";
 import Services from '../components/services'
 // import axios from 'axios';
 // import FeaturedRooms from "../components/rooms/featured/featuredRooms";
-// import { getFeaturedRooms } from "../store/rooms";
+import { getFeaturedRooms } from "../store/rooms";
 
-export async function getStaticProps() {
-    // const rooms = await getFeaturedRooms();
+export async function getServerSideProps() {
+    const rooms = await getFeaturedRooms();
     return {
         props: {
             rooms:"rooms"

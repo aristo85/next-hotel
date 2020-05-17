@@ -4,7 +4,7 @@ import Banner from "../components/banner";
 import Link from "next/link";
 import Services from '../components/services'
 // import axios from 'axios';
-// import FeaturedRooms from "../components/rooms/featured/featuredRooms";
+import FeaturedRooms from "../components/rooms/featured/featuredRooms";
 import { getFeaturedRooms } from "../store/rooms";
 
 export async function getServerSideProps() {
@@ -26,7 +26,7 @@ function Index({rooms}) {
                 </Banner>
             </Hero>
             <Services />
-            {/*<FeaturedRooms rooms={rooms} />*/}
+            <FeaturedRooms rooms={rooms} />
         </div>
     )
 }

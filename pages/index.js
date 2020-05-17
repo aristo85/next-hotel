@@ -11,7 +11,7 @@ export async function getServerSideProps() {
     const rooms = await getFeaturedRooms();
     return {
         props: {
-            rooms:"rooms"
+            rooms
         },
     }
 }

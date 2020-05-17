@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Dropzone from "react-dropzone";
-import axios from 'axios';
+
+export async function getServerSideProps() {
+    // const rooms = await getFeaturedRooms();
+    return {
+        props: {
+            rooms:"rooms"
+        },
+    }
+}
+
 
 const FileUpload = (props) => {
     const [images, setImages] = useState([]);
@@ -12,7 +21,7 @@ const FileUpload = (props) => {
         };
         formData.append("file", files[0])
         try {
-            const response = await axios.post(`${process.env.URI}/api/uploads/images`, formData, config);
+            const response = await axios.post('/api/uploads/images', formData, config);
             await setImages([...images, response.data.image]);
 
         }catch (e) {

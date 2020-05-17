@@ -1,8 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import FileUpload from '../components/uploads/fileRoomUpload';
+import dynamic from "next/dynamic";
 import axios from 'axios';
 import {Form, FormGroup, Label, Input, Button, CustomInput} from 'reactstrap';
 import { useRouter} from "next/router";
+
+const FileUpload = dynamic(
+    () => import('../components/uploads/fileRoomUpload'),
+    { ssr: false }
+);
 
 const extras = [
     "Plush pillows and breathable bed linens",

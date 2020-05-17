@@ -1,16 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Dropzone from "react-dropzone";
 
-export async function getServerSideProps() {
-    // const rooms = await getFeaturedRooms();
-    return {
-        props: {
-            rooms:"rooms"
-        },
-    }
-}
-
-
 const FileUpload = (props) => {
     const [images, setImages] = useState([]);
 

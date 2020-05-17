@@ -12,7 +12,7 @@ const FileUpload = (props) => {
         };
         formData.append("file", files[0])
         try {
-            const response = await axios.post('api/uploads/images', formData, config);
+            const response = await axios.post(`${process.env.URI}/api/uploads/images`, formData, config);
             await setImages([...images, response.data.image]);
 
         }catch (e) {
@@ -22,7 +22,7 @@ const FileUpload = (props) => {
     const onDelete = async (indexToDelete) => {
         let deleteItem = images[indexToDelete]
         console.log(deleteItem)
-        const response = await axios.delete('api/uploads/deleteimage',{data: {
+        const response = await axios.delete('/api/uploads/deleteimage',{data: {
                 deleteItem
             }});
         if (response.data.success) {
@@ -69,4 +69,4 @@ const FileUpload = (props) => {
     );
 };
 
-export default FileUpload;
+export default FileUpload

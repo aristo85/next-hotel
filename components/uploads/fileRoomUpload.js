@@ -69,4 +69,4 @@ const FileUpload = (props) => {
     );
 };
 
-export default FileUpload
+export default FileUpload;

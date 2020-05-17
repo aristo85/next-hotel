@@ -4,14 +4,14 @@ import Banner from "../components/banner";
 import Link from "next/link";
 import Services from '../components/services'
 // import axios from 'axios';
-import FeaturedRooms from "../components/rooms/featured/featuredRooms";
-import { getFeaturedRooms } from "../store/rooms";
+// import FeaturedRooms from "../components/rooms/featured/featuredRooms";
+// import { getFeaturedRooms } from "../store/rooms";
 
 export async function getStaticProps() {
-    const rooms = await getFeaturedRooms();
+    // const rooms = await getFeaturedRooms();
     return {
         props: {
-            rooms
+            rooms:"rooms"
         },
     }
 }
@@ -26,7 +26,7 @@ function Index({rooms}) {
                 </Banner>
             </Hero>
             <Services />
-            <FeaturedRooms rooms={rooms} />
+            {/*<FeaturedRooms rooms={rooms} />*/}
         </div>
     )
 }

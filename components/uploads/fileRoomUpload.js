@@ -22,7 +22,7 @@ const FileUpload = (props) => {
     const onDelete = async (indexToDelete) => {
         let deleteItem = images[indexToDelete]
         console.log(deleteItem)
-        const response = await axios.delete('/api/uploads/deleteimage',{data: {
+        const response = await axios.delete('api/uploads/deleteimage',{data: {
                 deleteItem
             }});
         if (response.data.success) {
